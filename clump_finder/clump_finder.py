@@ -57,7 +57,7 @@ for i in frequent_kmers:
     index = 0
     occurrances = frequent_kmers[i]
     while index + t <= len(occurrances):
-        if occurrances[index + t - 1] - occurrances[index] <= L:
+        if occurrances[index + t - 1] - occurrances[index] <= L - k:
             if i in clumps:
                 clumps[i] += 1
             else:
@@ -65,5 +65,10 @@ for i in frequent_kmers:
         index += 1
 
 # now, print out the clumps
-for i in clumps:
+'''for i in clumps:
     print i,
+
+print'''
+
+# and of course, the count
+print len(clumps)
